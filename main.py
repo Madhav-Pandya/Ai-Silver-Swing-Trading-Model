@@ -4,7 +4,6 @@ BOT_TOKEN = "8351738232:AAGQEQwFTyApRcWsPK8Z7rPmuTh-Don0mWg"
 CHAT_ID = "591297901"
 
 
-
 import pandas as pd
 import joblib
 import yfinance as yf

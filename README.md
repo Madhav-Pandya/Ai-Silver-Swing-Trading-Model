@@ -22,6 +22,67 @@ Model retraining support
 
 Prediction-based trade signals
 
+📲 Real-time Telegram trade alerts
+
+Buy/Sell notifications
+
+Stop-loss & target updates
+
+Trade execution confirmations
+
+📩 Telegram Alert System
+
+This project supports automatic Telegram notifications for trade signals.
+
+Notifications include:
+
+Buy / Sell signal
+
+Entry price
+
+Stop-loss
+
+Take-profit
+
+Timestamp
+
+Setup
+
+Create a Telegram bot
+
+Message @BotFather
+
+Use /newbot
+
+Copy your Bot Token
+
+Get your Chat ID
+
+Message your bot
+
+Use:
+
+https://api.telegram.org/bot<TOKEN>/getUpdates
+
+
+Configure in project
+
+TELEGRAM_TOKEN = "your_bot_token"
+CHAT_ID = "your_chat_id"
+
+
+Enable alerts
+
+python predict.py
+
+📌 Sample Alert
+📊 Silver Trade Alert
+Action: BUY
+Price: 24.85
+SL: 24.50
+Target: 25.40
+Time: 14:32 IST
+
 🛠 Tech Stack
 
 Python
@@ -135,4 +196,3 @@ MIT License
 👤 Author
 
 Madhav Pandya
-AI Trading Enthusiast
