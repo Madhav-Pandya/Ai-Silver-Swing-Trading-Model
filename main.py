@@ -1,7 +1,7 @@
 import requests
 
-BOT_TOKEN = "8351738232:AAGQEQwFTyApRcWsPK8Z7rPmuTh-Don0mWg"
-CHAT_ID = "591297901"
+BOT_TOKEN = "your_bot_token"
+CHAT_ID = "your_chat_id"
 
 
 import pandas as pd

@@ -67,7 +67,7 @@ https://api.telegram.org/bot<TOKEN>/getUpdates
 
 Configure in project
 
-TELEGRAM_TOKEN = "your_bot_token"
+BOT_TOKEN = "your_bot_token"
 CHAT_ID = "your_chat_id"
 
 
