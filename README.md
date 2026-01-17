@@ -1,164 +1,191 @@
-AI Silver Swing Trading Model
-📌 Project Overview
+# AI Silver Swing Trading Model 🤖📈
 
-This project is an AI-based swing trading model for Silver (XAG/USD).
-It uses machine learning techniques and technical indicators to predict trade signals and evaluate performance through backtesting.
+## 📌 Project Overview
+
+This project is an AI-based swing trading model for Silver (XAG/USD). It uses machine learning techniques and technical indicators to generate trade signals and evaluate performance through backtesting.
 
 The goal is to build a data-driven trading system that helps identify profitable swing trades while managing risk effectively.
 
-🚀 Features
+---
 
-Historical price data processing
+## 🚀 Features
 
-Technical indicator calculation
+* Historical price data processing
+* Technical indicator calculation
+* Machine Learning model training
+* Automated backtesting system
+* Performance metrics (win rate, profit, drawdown)
+* Model retraining support 🔁
+* Prediction-based trade signals
 
-Machine Learning model training
+### 📲 Real-time Telegram trade alerts
 
-Automated backtesting system
+* Buy/Sell notifications
+* Stop-loss & target updates
+* Trade execution confirmations
 
-Performance metrics (win rate, profit, drawdown)
+---
 
-Model retraining support
-
-Prediction-based trade signals
-
-📲 Real-time Telegram trade alerts
-
-Buy/Sell notifications
-
-Stop-loss & target updates
-
-Trade execution confirmations
-
-📩 Telegram Alert System
+## 📩 Telegram Alert System
 
 This project supports automatic Telegram notifications for trade signals.
 
-Notifications include:
+### 🔔 Notifications include
 
-Buy / Sell signal
+* Buy / Sell signal
+* Entry price
+* Stop-loss
+* Take-profit
+* Timestamp
 
-Entry price
+### ⚙ Setup
 
-Stop-loss
+#### 1️⃣ Create your alert bot
 
-Take-profit
+1. Open Telegram
+2. Message **@BotFather**
+3. Use `/newbot`
+4. Copy your **Bot Token** 🔑
 
-Timestamp
+#### 2️⃣ Get your Chat ID (Using @userinfobot)
 
-Setup
+1. Open **@userinfobot**
+2. Send:
 
-Create a Telegram bot
+   ```
+   /start
+   ```
+3. You will receive:
 
-Message @BotFather
+   * Your **Id** (this is your Chat ID)
+   * Username
 
-Use /newbot
+#### 3️⃣ Activate your alert bot
 
-Copy your Bot Token
+* Open your newly created bot
+* Send any message ("Hi" or "Start")
 
-Get your Chat ID
+> ⚠ This step is mandatory or Telegram will not deliver messages
 
-Message your bot
+#### 4️⃣ Configure in project
 
-Use:
+Edit `main.py`:
 
-https://api.telegram.org/bot<TOKEN>/getUpdates
-
-
-Configure in project
-
+```python
 BOT_TOKEN = "your_bot_token"
-CHAT_ID = "your_chat_id"
+CHAT_ID = "your_chat_id"  # From @userinfobot
+```
 
+---
 
-Enable alerts
+## 📌 Sample Alert
 
-python predict.py
-
-📌 Sample Alert
+```
 📊 Silver Trade Alert
 Action: BUY
 Price: 24.85
 SL: 24.50
 Target: 25.40
 Time: 14:32 IST
+```
 
-🛠 Tech Stack
+---
 
-Python
+## 🛠 Tech Stack
 
-Pandas
+* Python 🐍
+* Pandas
+* NumPy
+* Scikit-learn
+* XGBoost
+* pandas-ta
+* Joblib
 
-NumPy
+---
 
-Scikit-learn
+## 📂 Project Structure
 
-XGBoost
-
-pandas-ta
-
-Joblib
-
-📂 Project Structure
+```
 ai-silver-swing-model/
 │
 ├── data/
 │   ├── silver_swing_clean.csv
 │   └── silver_swing.csv
-|
+│
 ├── model/
 │   └── trained_model.pkl
 │
 ├── backtest.py
-├── train.py
-├── predict.py
-├── requirements.txt
+├── auto_retrain.py
+├── main.py
 └── README.md
+```
 
-⚙ Installation
+---
+
+## ⚙ Installation
+
+```bash
 git clone https://github.com/USERNAME/ai-silver-swing-model.git
 cd ai-silver-swing-model
-pip install -r requirements.txt
+```
 
-▶ How to Run
-Train model
-python train.py
+---
 
-Run backtest
+## ▶ How to Run
+
+### 🔧 Auto-train model / Compare old model with new model keep the best
+
+```bash
+python auto_retrain.py
+```
+
+### 🔧 Train model
+
+```bash
+python train_swing.py
+```
+
+### 📊 Run backtest
+
+```bash
 python backtest.py
+```
 
-Predict signals
-python predict.py
+### 🤖 Predict signals / Run project
 
-📊 Strategy Logic
+```bash
+python main.py
+```
+
+---
+
+## 📊 Strategy Logic
 
 Uses technical indicators such as:
 
-RSI
-
-MACD
-
-Moving Averages
-
-ATR
+* RSI
+* MACD
+* Moving Averages
+* ATR
 
 AI model predicts:
 
-Buy
-
-Sell
-
-Hold
+* Buy
+* Sell
+* Hold / No Trade
 
 Trades are executed based on:
 
-Confidence threshold
+* Confidence threshold
+* Risk-reward ratio
+* Stop-loss and take-profit rules
 
-Risk-reward ratio
+---
 
-Stop-loss and take-profit rules
+## 📈 Sample Output
 
-📈 Sample Output
+```
 BACKTEST REPORT
 ----------------
 Starting capital: 100000
@@ -167,32 +194,46 @@ Total trades: 38
 Wins: 24
 Losses: 14
 Win rate: 63.15%
+```
 
-🔁 Auto Retraining
+---
 
-Supports periodic model retraining
+FOR AUTO RETRAIN / AUTO RUN 
 
-Compares:
+Please configure your system to run main.py every day & auto_retrain every week
 
-Old model vs new model
 
-Keeps better performing model
+---
 
-⚠ Disclaimer
+## 🔁 Auto Retraining
+
+* Supports periodic model retraining
+* Compares old model vs new model
+* Keeps better performing model
+* Do every week(sunday)
+---
+
+## ⚠ Disclaimer
 
 This project is for educational purposes only.
 Trading involves risk.
 I am not responsible for any financial losses.
 
-🙌 Contribution
+---
+
+## 🙌 Contribution
 
 Pull requests are welcome.
 For major changes, please open an issue first.
 
-📜 License
+---
+
+## 📜 License
 
 MIT License
 
-👤 Author
+---
+
+## 👤 Author
 
 Madhav Pandya
